@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="CManager.Console.Presentation.ConsoleApp/CManager.Console.Presentation.ConsoleApp.csproj" />
   <Project Path="CManager.Core.Domain/CManager.Core.Domain.csproj" />
+  <Project Path="CManager.Core.Infrastructure/CManager.Core.Infrastructure.csproj" Id="6bf8185c-fb58-4356-a314-b1b03da58eea" />
 </Solution>
