@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="CManager.Console.Presentation.ConsoleApp/CManager.Console.Presentation.ConsoleApp.csproj" />
+  <Project Path="CManager.Core.Application/CManager.Core.Application.csproj" Id="fd17a898-53a5-4b31-a6fa-fc64ae9ead7b" />
   <Project Path="CManager.Core.Domain/CManager.Core.Domain.csproj" />
   <Project Path="CManager.Core.Infrastructure/CManager.Core.Infrastructure.csproj" Id="6bf8185c-fb58-4356-a314-b1b03da58eea" />
 </Solution>
