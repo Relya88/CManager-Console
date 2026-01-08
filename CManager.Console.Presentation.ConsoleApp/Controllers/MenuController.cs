@@ -73,39 +73,73 @@ public class MenuController
 
         Console.Write("First name: ");
         var firstName = Console.ReadLine();
-
         if (string.IsNullOrWhiteSpace(firstName))
         {
-            Console.WriteLine("Enter valid name. First name cannot be empty.");
-            Console.WriteLine("Press any key to continue..");
-            Console.ReadKey();
+            ShowInputError("First name");
+            return;
+        }
+
+        Console.Write("Last name: ");
+        var lastName = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(lastName))
+        {
+            ShowInputError("Last name");
             return;
         }
 
         Console.Write("Email: ");
         var email = Console.ReadLine();
-
         if (string.IsNullOrWhiteSpace(email))
         {
-            Console.WriteLine("Enter valid Email. Email cannot be empty.");
-            Console.WriteLine("Press any key to continue..");
-            Console.ReadKey();
+            ShowInputError("Email");
             return;
         }
 
-        // Skapade ett nytt objekt (customerModel) med hjälp av chatgpt för varje kund alltid ska få ett unikt id (Guid.NewGuid)
+        Console.Write("Phone number: ");
+        var phoneNumber = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(phoneNumber))
+        {
+            ShowInputError("Phone number");
+            return;
+        }
+
+        Console.Write("Street address: ");
+        var street = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(street))
+        {
+            ShowInputError("Street address");
+            return;
+        }
+
+        Console.Write("Postal code: ");
+        var postalCode = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(postalCode))
+        {
+            ShowInputError("Postal code");
+            return;
+        }
+
+        Console.Write("City: ");
+        var city = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(city))
+        {
+            ShowInputError("City");
+            return;
+        }
+
+        // Skapade ett nytt objekt (customerModel) med hjälp av chatgpt för insamling av info och att varje kund alltid ska få ett unikt id (Guid.NewGuid)
         var customer = new CustomerModel
         {
             Id = Guid.NewGuid(),
             FirstName = firstName,
-            LastName = "Test",
+            LastName = lastName,
             Email = email,
-            PhoneNumber = "000",
+            PhoneNumber = phoneNumber,
             Address = new AddressModel
             {
-                Street = "-",
-                PostalCode = "-",
-                City = "-"
+                Street = street,
+                PostalCode = postalCode,
+                City = city
             }
         };
 
@@ -191,6 +225,15 @@ public class MenuController
         Console.WriteLine("Press any key to continue..");
         Console.ReadKey();
     }
+
+    // Fick tipset att ta bort den från console.Writheline delen för att slippa upprepa, så la till en gemensam felutskrift för tom input istället
+    private void ShowInputError(string fieldName)
+    {
+        Console.WriteLine($"{fieldName} cannot be empty.");
+        Console.WriteLine("Press any key to continue..");
+        Console.ReadKey();
+    }
+
 
     // Tar bort en kund baserat på mail men själva borttagningen sker via kundes unika id i servicelagret
     private void DeleteCustomer()
