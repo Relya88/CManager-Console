@@ -11,6 +11,8 @@ using System.Windows.Shapes;
 using CManager.Core.Application.Interfaces;
 using CManager.Core.Application.Services;
 using CManager.Core.Infrastructure.Repos;
+using CManager.Core.Application.Factories;
+
 
 
 namespace CManager.Presentation.GuiApp
@@ -24,7 +26,7 @@ namespace CManager.Presentation.GuiApp
         {
             InitializeComponent();
 
-            _customerService = new CustomerService(new CustomerRepo());
+            _customerService = CustomerServiceFactory.Create();
         }
 
         private void ManageCustomers_Click(object sender, RoutedEventArgs e)
