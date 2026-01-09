@@ -8,6 +8,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CManager.Core.Application.Interfaces;
+using CManager.Core.Application.Services;
+using CManager.Core.Infrastructure.Repos;
+
 
 namespace CManager.Presentation.GuiApp
 {

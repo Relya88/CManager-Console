@@ -8,4 +8,10 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CManager.Core.Application\CManager.Core.Application.csproj" />
+    <ProjectReference Include="..\CManager.Core.Domain\CManager.Core.Domain.csproj" />
+    <ProjectReference Include="..\CManager.Core.Infrastructure\CManager.Core.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
