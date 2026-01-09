@@ -5,9 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CManager.Presentation.GuiApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        WindowStartupLocation="CenterScreen"
+        Background="#FFE4E4B6"
+        Title="Customer Service" Height="450" Width="300">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!---övredel och knapp -->
+        <StackPanel Grid.Row="0">
+            <Button x:Name="ManageCustomers"
+                Content="Manage customers"
+                Padding="5"
+                Click="ManageCustomers_Click"/>
+        </StackPanel>
+
+        <!-- kundlista -->
+        <ListView x:Name="CustomersList"
+              Grid.Row="1"
+              Margin="0,20,0,0"/>
 
     </Grid>
+
 </Window>

@@ -15,14 +15,31 @@ using CManager.Core.Infrastructure.Repos;
 
 namespace CManager.Presentation.GuiApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
+        private readonly ICustomerService _customerService;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            _customerService = new CustomerService(new CustomerRepo());
+        }
+
+        private void ManageCustomers_Click(object sender, RoutedEventArgs e)
+        {
+            CustomersList.Items.Clear();
+            
+            var customers = _customerService.GetCustomers();
+
+            foreach (var customer in customers) // tog hjälp av chatgpt för att loopen skulle hantera flera kunder och visa dem en och en i gui
+            {
+                CustomersList.Items.Add(
+                    $"{customer.FirstName} {customer.LastName} - {customer.Email}"
+                );
+            }
         }
     }
 }
+
